@@ -1,0 +1,31 @@
+<template>
+    <div>This is a Parent Page</div>
+
+    <!-- <div>
+        <input type="text" onkeyup={changeHandler}/> {name}
+    </div> -->
+
+    
+    <!-- <c-life-cycle-hook-error-callback></c-life-cycle-hook-error-callback> -->
+    
+    <template if:true={displayChild}>
+        <lightning-button
+        variant="brand"
+        label="remove child"
+        title="remove child"
+        onclick={handleClick}
+        class="slds-m-left_x-small"></lightning-button>
+    </template>
+    <template if:false={displayChild}>
+        <lightning-button
+        variant="brand"
+        label="Show child"
+        title="Show child"
+        onclick={handleClick}
+        class="slds-m-left_x-small"></lightning-button>
+    </template>
+    <template if:true={displayChild}>
+        <c-life-cycle-disconnected-callback></c-life-cycle-disconnected-callback>
+    </template>
+
+</template>
